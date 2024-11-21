@@ -1,0 +1,73 @@
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<div class="containerBread" *ngIf="!loader">
+    <a href="Inicio">Inicio</a> / Servicios
+</div>
+<div *ngIf="!loader">
+    <div class="container mt-5">
+        <div id="response" class="row">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">Oftalmólogos</span>
+                    <p></p>
+
+                    <a class="btn-solid-reg" *ngIf="isAdmin2" href="/RegistrarPaciente"> Añadir </a>
+                    <a id="boton" class="btn-solid-reg" *ngIf="isAdmin2" onclick="traerDatos()"
+                        style="margin-left: 10px;"> Cargar </a>
+
+
+                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"
+                        *ngIf="loading && !errorLoading">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <table *ngIf="listPaciente.length > 0 && !errorLoading" class="table table-striped mt-3">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Matrícula</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Foto</th>
+                                <th scope="col">Certificado</th>
+                                <th scope="col">Fecha de registro</th>
+                                <th scope="col">Opciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="ofta">
+                            <tr *ngFor="let paciente of listPaciente">
+                                <td> {{paciente.mat}}</td>
+                                <td> {{paciente.nom}} {{paciente.apeP}} {{paciente.apeM}}</td>
+                                <td>
+                                    <img style="width: 100px; height: 100;" *ngIf="paciente.foto"
+                                        [src]="getSanitizedImageUrl(paciente.foto, 'jpeg')" alt="Foto">
+                                </td>
+                                <td> 
+                                    <a *ngIf="paciente.cert" href="javascript:void(0);"
+                                        (click)="openPdf(paciente.cert)">
+                                        Ver PDF
+                                    </a>
+                                </td>
+                                <td> {{paciente.fechReg}}</td>
+                                <td> <i style="cursor: pointer;" (click)="eliminarPaciente(paciente._id)"><svg
+                                            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                                            viewBox="0 0 30 30">
+                                            <path
+                                                d="M 13 3 A 1.0001 1.0001 0 0 0 11.986328 4 L 6 4 A 1.0001 1.0001 0 1 0 6 6 L 24 6 A 1.0001 1.0001 0 1 0 24 4 L 18.013672 4 A 1.0001 1.0001 0 0 0 17 3 L 13 3 z M 6 8 L 6 24 C 6 25.105 6.895 26 8 26 L 22 26 C 23.105 26 24 25.105 24 24 L 24 8 L 6 8 z">
+                                            </path>
+                                        </svg></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="loadError" *ngIf="errorLoading">
+                        <p>Ooops... Hubo un error al cargar los datos de nuestros profesionales :(. Por favor, inténtalo
+                            de nuevo más tarde.</p>
+                        <img src="./../../../../assets/img/closed.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

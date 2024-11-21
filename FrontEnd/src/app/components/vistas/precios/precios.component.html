@@ -1,0 +1,96 @@
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<div class="containerBread"  *ngIf="!loader">
+    <a href="Inicio">Inicio</a> / Planes
+  </div>
+<div class="container" *ngIf="!loader">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="pricing-table">
+                <div class="plan">
+                    <h2>Pro Lite</h2>
+                    <p class="price">$2,921.61 MXN*</p>
+                    <p>400 GB de almacenamiento</p>
+                    <p>12 TB de transferencia</p>
+                    <button class="button-pricing" (click)="buy('Pro Lite')">Comprar Pro Lite</button>
+
+                </div>
+                <div class="plan-best-seller">
+                    <h2>Pro I</h2>
+                    <p class="price">$5,1843.98 MXN*</p>
+                    <p>400 GB de almacenamiento</p>
+                    <p>12 TB de transferencia</p>
+                    <button class="button-pricing-bs" (click)="buy('Pro I')">Comprar Pro I</button>
+
+                </div>
+                <div class="plan">
+                    <h2>Pro II</h2>
+                    <p class="price">$10,530.65 MXN*</p>
+                    <p>400 GB de almacenamiento</p>
+                    <p>12 TB de transferencia</p>
+                    <button class="button-pricing" (click)="buy('Pro II')">Comprar Pro II</button>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2 style="margin-left: 21%;">Comparaciones</h2>
+        <div class="pricing-table">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Pro Lite</th>
+                        <th>Pro I</th>
+                        <th>Pro II</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Disponibilidad</td>
+                        <td><span class="checkmark-right">&#10004;</span></td>
+                        <td><span class="checkmark-wrong">&#10006;</span></td>
+                        <td><span class="checkmark-wrong">&#10006;</span></td>
+                    </tr>
+                    <tr>
+                        <td>Disponibilidad</td>
+                        <td><span class="checkmark-right">&#10004;</span></td>
+                        <td><span class="checkmark-right">&#10004;</span></td>
+                        <td><span class="checkmark-wrong">&#10006;</span></td>
+                    </tr>
+                    <tr>
+                        <td>Disponibilidad</td>
+                        <td><span class="checkmark-right">&#10004;</span></td>
+                        <td><span class="checkmark-right">&#10004;</span></td>
+                        <td><span class="checkmark-right">&#10004;</span></td>
+                    </tr>
+                    <!-- Repite las filas para otras características -->
+                </tbody>
+            </table>
+        </div>
+
+
+        <div id="staticBackdrop" class="modal fade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">No has iniciado sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Inicia sesión en OptiCuida para completar la compra. Si no tienes una cuenta, primero crea
+                            una.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a id="modalCtaBtn" class="btn btn-primary" href="/login">Iniciar sesión</a>
+                        <a id="modalCtaBtn" class="btn btn-outline-secondary" href="/signup"
+                            data-bs-dismiss="modal">Crear cuenta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

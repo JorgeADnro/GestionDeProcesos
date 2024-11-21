@@ -1,0 +1,302 @@
+<div class="spinner-container" *ngIf="loader">
+  <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div class="containerBread"  *ngIf="!loader">
+  Inicio
+</div>
+<div class="container-fluid" *ngIf="!loader">
+  <div class="row">
+    <div class="col">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../../../../assets/img/mujer.png" class="d-block img-fluid"
+                style="max-width: 80%; max-height: 80vh; margin: auto" alt="" />
+            </div>
+            <div class="carousel-item">
+              <img src="../../../../assets/img/ojosDeMujer.png" class="d-block img-fluid"
+                style="max-width: 80%; max-height: 80vh; margin: auto" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../../../../assets/img/mujer2.png" class="d-block img-fluid"
+                style="max-width: 80%; max-height: 80vh; margin: auto" alt="..." />
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="header" class="header" *ngIf="!loader">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-xl-5">
+        <div class="text-container">
+          <div class="section-title">Bienvenido a OptiCuida</div>
+          <h1 class="h1-large">
+            OptiCuida, el sistema que toda óptica necesita
+          </h1>
+          <p class="p-large">
+            Cuidar tus ojos es esencial para mantener una buena salud visual a
+            lo largo de tu vida.
+          </p>
+          <a class="btn-solid-lg buscable" href="/Precios">Servicios que ofrecemos</a>
+
+        </div>
+        <!-- end of text-container -->
+      </div>
+      <!-- end of col -->
+      <div class="col-lg-6 col-xl-7">
+        <div class="image-container">
+          <img class="img-fluid" src="../../../../assets/img/Morra.jpg" alt="alternative" />
+        </div>
+        <!-- end of image-container -->
+      </div>
+      <!-- end of col -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container -->
+</header>
+<!-- end of header -->
+<!-- end of header -->
+
+<!-- Services -->
+
+<div id="services" class="searchable-content" class="cards-1" *ngIf="!loader">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Card -->
+        <div class="card">
+          <div class="card-icon blue">
+            <span class="far fa-file-alt"></span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Cuidado de tus ojos: Mantén tu vista nítida y radiante
+            </h5>
+            <p>Protege tus ojos con estos simples pasos:</p>
+            <ul class="additional-info" style="display: none;">
+              <li>
+                <strong>Revisiones regulares:</strong> Haz brillar tu visión con
+                exámenes oculares anuales.
+              </li>
+              <li>
+                <strong>Escudo solar para tus ojos:</strong> Dale a tus ojos el
+                amor que se merecen con gafas de sol UV.
+              </li>
+              <li>
+                <strong>Descansa tus ojos:</strong> Aleja la fatiga visual con
+                pausas cortas y nutritivas.
+              </li>
+              <li>
+                <strong>Higiene ocular:</strong> Mima tus ojos con una limpieza
+                suave 
+              </li>
+            </ul>
+            <a class="btn-solid-reg" style="cursor: pointer;" onclick="toggleCardInfo(this)">Ver más</a>
+
+          </div>
+        </div>
+        <!-- end of card -->
+
+        <!-- Card -->
+        <div class="card">
+          <div class="card-icon yellow">
+            <span class="fas fa-solar-panel"></span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Prevenir la pérdida de visión: Visión clara para toda la vida
+            </h5>
+            <p>
+              Asegúrate de mantener una visión nítida y saludable mediante la adopción de medidas preventivas
+            </p>
+            <ul class="additional-info" style="display: none;">
+              <br />
+              <li>
+                <strong>Activa tu bienestar:</strong> Protege tu visión
+                manteniendo un peso saludable y siendo activo.
+              </li>
+              <br />
+              <li>
+                <strong>Descansa de la pantalla:</strong> Protege tus ojos
+                limitando el tiempo frente a pantallas digitales.
+              </li>
+              <br />
+            </ul>
+            <a class="btn-solid-reg" style="cursor: pointer;" onclick="toggleCardInfo(this)">Ver más</a>
+          </div>
+        </div>
+        
+        <!-- end of card -->
+
+        <!-- Card 
+        <div class="card">
+          <div class="card-icon red"></div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Tratamientos y consulta con un oftalmólogo: Ilumina tu visión
+            </h5>
+            <p>
+              Descubre opciones de tratamiento personalizadas y obtén
+              orientación experta
+            </p>
+            <ul>
+              <li>
+                <strong>Vuelve a ver con claridad:</strong> Recupera tu visión
+                con tratamientos personalizados.
+              </li>
+              <li>
+                <strong>Cirugía de cataratas:</strong> Disipa la niebla visual y
+                descubre un mundo claro y vibrante.
+              </li>
+              <li>
+                <strong>Medicamentos para tus ojos:</strong> Nutre y protege tus
+                ojos con la atención experta de un oftalmólogo.
+              </li>
+              <li>
+                <strong>Chequeo de visión:</strong> Ilumina tu camino hacia una
+                visión clara con una consulta oftalmológica.
+              </li>
+            </ul>
+          </div>
+        </div>-->
+        <!-- end of card -->
+      </div>
+      <!-- end of col -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container -->
+</div>
+<!-- end of cards-1 -->
+<!-- end of services -->
+
+<!-- Details 1 -->
+<div id="details" class="searchable-content" class="basic-1" *ngIf="!loader">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-xl-7">
+        <div class="image-container">
+          <img style="margin-top:20%;" class="img-fluid" src="../../../../assets/img/Weyes.jpg" alt="alternative" />
+        </div>
+        <!-- end of image-container -->
+      </div>
+      <!-- end of col -->
+      <div class="col-lg-6 col-xl-5">
+        <div class="text-container">
+          <h2>
+            <span>Conoce más </span><br />
+            sobre nuestra empresa
+          </h2>
+          <p>
+            Explora Nuestros Objetivos ¡Bienvenido a nuestra plataforma de metas
+            y sueños! Sumérgete en un mundo donde cada paso nos acerca a la
+            excelencia. Descubre lo que nos impulsa a alcanzar nuevas alturas y
+            a servirte mejor cada día.
+          </p>
+
+          <a class="btn-solid-reg" data-bs-target="#staticBackdrop" href="/Nosotros">Ver más</a>
+         
+        </div>
+        <!-- end of text-container -->
+        <div class="text-container">
+          <h4>
+            <span>Conoce más </span><br />
+            sobre Tratamientos y consulta con un oftalmólogo
+          </h4>
+          <p>
+            Descubre opciones de tratamiento personalizadas y obtén orientación experta
+          </p>
+          <a style="margin-left:10px;" class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver más</a>
+      </div>
+      <!-- end of col -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container -->
+</div>
+<!-- end of basic-1 -->
+<!-- end of details 1 -->
+
+<!-- Details Modal -->
+<div id="staticBackdrop" class="modal fade" tabindex="-1" aria-hidden="true" *ngIf="!loader">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="row">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="col-lg-8">
+                  <div class="image-container">
+                      <img  style="margin-bottom: 3%;" class="img-fluid" src="../../../../assets/img/revisando-ojos.jpg" alt="alternative">
+                  </div> <!-- end of image-container -->
+              </div> <!-- end of col -->
+              <div class="col-lg-4">
+                <p>
+                  Descubre opciones de tratamiento personalizadas y obtén
+                  orientación experta
+                </p>
+                <ul>
+                  <li>
+                    <strong>Vuelve a ver con claridad:</strong> Recupera tu visión
+                    con tratamientos personalizados.
+                  </li>
+                  <li>
+                    <strong>Cirugía de cataratas:</strong> Disipa la niebla visual y
+                    descubre un mundo claro y vibrante.
+                  </li>
+                  <li>
+                    <strong>Medicamentos para tus ojos:</strong> Nutre y protege tus
+                    ojos con la atención experta de un oftalmólogo.
+                  </li>
+                  <li>
+                    <strong>Chequeo de visión:</strong> Ilumina tu camino hacia una
+                    visión clara con una consulta oftalmológica.
+                  </li>
+                </ul>
+                  <button type="button" class="btn-outline-reg" data-bs-dismiss="modal">Close</button>
+              </div> <!-- end of col -->
+          </div> <!-- end of row -->
+      </div> <!-- end of modal-content -->
+  </div> <!-- end of modal-dialog -->
+</div> <!-- end of modal -->
+<!-- end of details modal -->
+
+
+<!-- Details Modal -->
+<!-- Scripts -->
+<script src="../../../../js/bootstrap.min.js"></script>
+<!-- Bootstrap framework -->
+<script src="../../../../js/swiper.min.js"></script>
+<!-- Swiper for image and text sliders -->
+<script src="../../../../js/purecounter.min.js"></script>
+<!-- Purecounter counter for statistics numbers -->
+<script src="../../../../js/isotope.pkgd.min.js"></script>
+<!-- Isotope for filter -->
+<script src="../../../../js/scripts.js"></script>
+<!-- Custom scripts -->

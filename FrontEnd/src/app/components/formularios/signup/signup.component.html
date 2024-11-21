@@ -1,0 +1,52 @@
+<div class="spinner-container" *ngIf="loader">
+  <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div class="containerBread"  *ngIf="!loader">
+  <a href="Inicio">Inicio</a> / SignUp
+</div>
+<div class="wrapper fadeInDown" *ngIf="!loader">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../../assets/img/user.png" id="icon" alt="User Icon" />
+    </div>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <div
+        *ngIf="formulario?.get('username')?.invalid && (formulario?.get('username')?.dirty || formulario?.get('username')?.touched)">
+        <div *ngIf="formulario?.get('username')?.errors?.['required']">El nombre de usuario es requerido.</div>
+      </div>
+      <input type="text" id="username" class="fadeIn third" name="login" formControlName="username"
+        placeholder="Nombre de usuario" />
+
+      <div
+        *ngIf="formulario?.get('email')?.invalid && (formulario?.get('email')?.dirty || formulario?.get('email')?.touched)">
+        <div *ngIf="formulario?.get('email')?.errors?.['required']">El correo electrónico es requerido.</div>
+        <div *ngIf="formulario?.get('email')?.errors?.['email']">Por favor, introduce un correo electrónico válido.
+        </div>
+      </div>
+      <input type="text" id="login" class="fadeIn second" name="login" formControlName="email" placeholder="correo" />
+
+      <div
+        *ngIf="formulario?.get('password')?.invalid && (formulario?.get('password')?.dirty || formulario?.get('password')?.touched)">
+        <div *ngIf="formulario?.get('password')?.errors?.['required']">La contraseña es requerida.</div>
+        <div *ngIf="formulario?.get('password')?.errors?.['invalidPassword']">La contraseña debe tener al menos 8
+          caracteres, máximo 16, una mayúscula, una minúscula, un número y un carácter especial.</div>
+      </div>
+      <input type="password" id="password" class="fadeIn third" name="login" formControlName="password"
+        placeholder="contraseña" />
+
+      <div
+        *ngIf="formulario?.invalid && (formulario?.get('recaptcha')?.dirty || formulario?.get('recaptcha')?.touched)">
+        <div *ngIf="formulario?.get('recaptcha')?.errors?.['required']">Por favor, completa el reCAPTCHA.</div>
+      </div>
+
+      <input type="submit" [disabled]="formulario?.invalid" value="Enviar" class="btn btn-info" />
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="spinner-container" *ngIf="loader">
+  <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div class="containerBread"  *ngIf="!loader">
+  <a href="Inicio">Inicio</a> / Login
+</div>
+<br>
+<div class="wrapper fadeInDown" style="margin-top: -50px" *ngIf="!loader">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../../assets/img/user.png" id="icon" alt="User Icon" />
+    </div>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit2()">
+      <input type="text" id="login" class="fadeIn second" name="login" formControlName="email" placeholder="correo" />
+      <div
+        *ngIf="formulario.get('email')?.invalid && (formulario.get('email')?.dirty || formulario.get('email')?.touched)">
+        <div *ngIf="formulario?.get('email')?.errors?.['email']">Por favor, introduce un correo electrónico válido.
+        </div>
+      </div>
+
+      <input type="password" id="password" class="fadeIn third" name="login" formControlName="password"
+        placeholder="contraseña" />
+      <div
+        *ngIf="formulario.get('password')?.invalid && (formulario.get('password')?.dirty || formulario.get('password')?.touched)">
+        <div *ngIf="formulario?.get('password')?.errors?.['required']">La contraseña es requerida.</div>
+      </div>
+
+      <input type="submit" [disabled]="formulario?.invalid" value="Enviar" class="btn btn-info" />
+
+      <div class="password-reset-container">
+        <div class="forgot-password"> <a href="/restablecer">¿Olvidaste tu contraseña?</a></div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+
+    <div class="spinner-container" *ngIf="loader">
+        <div
+          class="spinner-grow text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="containerBread"  *ngIf="!loader">
+        <a href="Inicio">Inicio</a> / Mapa
+      </div>
+      <div *ngIf="!loader" style="margin-left:100px;">
+      <h1>Mapa</h1>
+      <ol>
+        <li><a href="/Inicio">Inicio</a></li>
+        <li><a href="/VerProfesionales">Servcios</a></li>
+        <li><a href="/Nosotros">Nosotros</a></li>
+        <li><a href="/Precios">Planes</a></li>
+      </ol>
+    </div>

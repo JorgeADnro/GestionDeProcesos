@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="spinner-container" >
+    <div
+      class="spinner-grow text-primary"
+      style="width: 3rem; height: 3rem"
+      role="status"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div class="containerBread" *ngIf="!loader">
+    <a href="Inicio">Inicio</a> / <a href="Login">Login</a> / Recuperar Contraseña
+  </div>
+<div class="wrapper fadeInDown" *ngIf="!loader">
+    <div id="formContent">
+      <h2 class="fadeIn first">Restablecer Contraseña</h2>
+  
+      <div class="CrearCuenta">
+        <form [formGroup]="formulario" (ngSubmit)="submitForm()" class="default-form" action="/restablecer">
+          <div class="Campo" >
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="fadeIn second" placeholder="Email" formControlName="email" required>
+          </div>
+  
+          <div class="Campo left">
+            <button type="submit" class="btn btn-info">Restablecer</button>
+            <span class="underlineHover"></span>
+          </div>
+        </form>
+  
+        <div class="Campo Acciones">
+          <a href="/Login" class="underlineHover">¿Haz recordado tu contraseña? Vuelve a iniciar sesión.</a>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,53 @@
+<div class="spinner-container" *ngIf="loader">
+  <div
+    class="spinner-grow text-primary"
+    style="width: 3rem; height: 3rem"
+    role="status"
+  >
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div class="containerBread"  *ngIf="!loader">
+  <a href="Inicio">Inicio</a> / Nosotros
+</div>
+<div class="container" *ngIf="!loader">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12">
+        <div class="details-container" *ngIf="!loader">
+          <div class="row">
+            <!-- Columna del texto en el lado izquierdo -->
+            <div class="col-lg-7">
+              <div class="text-container">
+                <h2 class="text-center mb-4">Conoce más sobre nuestra empresa</h2>
+                <p class="text-justify">Explora Nuestros Objetivos ¡Bienvenido a nuestra plataforma de metas y sueños! Sumérgete en un mundo donde cada paso nos acerca a la excelencia. Descubre lo que nos impulsa a alcanzar nuevas alturas y a servirte mejor cada día.</p>
+  
+                <h3 class="mt-4"><strong>Misión:</strong></h3>
+                <p class="text-justify">Sumérgete en nuestra misión de liderar la transformación del cuidado visual. Descubre cómo ofrecemos información educativa sobre salud ocular, servicios de agendamiento de citas eficientes y una gestión integral de la salud visual.</p>
+  
+                <h3 class="mt-4"><strong>Visión:</strong></h3>
+                <p class="text-justify">Entra en nuestra visión para el año 2029, donde nos visualizamos como la plataforma líder en línea dedicada al cuidado visual.</p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+  
+            <!-- Columna de la imagen en el lado derecho -->
+            <div class="col-lg-5 align-self-center">
+              <div class="image-container text-center">
+                <img class="img-fluid rounded" src="../../../../assets/img/details-modal.jpg" alt="alternative" style="width: 80%; margin-top: 20px;" />
+              </div>
+              <!-- end of image-container -->
+            </div>
+            <!-- end of col -->
+          </div>
+          <!-- end of row -->
+        </div>
+        <!-- end of details-container -->
+      </div>
+      <!-- end of col -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container -->
+  
+  <div style="height: 50px;"></div> <!-- Espacio entre el footer y el card -->

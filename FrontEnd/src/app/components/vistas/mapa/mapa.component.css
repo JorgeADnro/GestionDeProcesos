@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+li ul {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+a {
+    
+    color: blue;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    margin-left: 14%; 
+}
+
+h1 {
+    width: 20px;
+}

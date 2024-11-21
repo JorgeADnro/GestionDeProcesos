@@ -1,0 +1,7 @@
+{
+    "/api/asps": {
+        "target":"https://opticuida.onrender.com",
+        "secure":false,
+        "logLevel": "debug"
+    }
+}

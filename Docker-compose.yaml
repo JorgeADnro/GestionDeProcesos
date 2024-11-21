@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  backend-jlam:
+    container_name: backend-jlam
+    build:
+      context: ./back-end  # Carpeta donde se encuentra tu Dockerfile del backend
+      dockerfile: Dockerfile  # Ruta al Dockerfile del backend
+    ports:
+      - "9090:9000"  # Expone el puerto 3000 del contenedor al puerto 3000 del host
+    environment:
+      MONGODB_URI: "mongodb://mongo:27017/opticuida"  # Conexión a MongoDB
+      CLIENTID: "AcuzDfHpvEFJON7VyDMhYyOeldTXqFgxDij-lkfC-8sv7cuJJAOBuSdsk8Yq8DHnPfEwbm-wPa4LJD7u"
+    networks:
+      - jlam
+    restart: always
+    depends_on:
+      - mongo  # Asegura que MongoDB se inicie antes que el backend
+
+  frontend-jlam:
+    container_name: frontend-jlam
+    build:
+      context: ./front-end  # Carpeta donde se encuentra tu Dockerfile del frontend
+      dockerfile: Dockerfile  # Ruta al Dockerfile del frontend
+    ports:
+      - "4300:4200"  # Expone el puerto 4200 del contenedor al puerto 4200 del host
+    networks:
+      - jlam
+    restart: always
+    depends_on:
+      - backend-jlam  # Asegura que el frontend se inicie después del backend
+
+  mongo:
+    container_name: mongo
+    image: mongo:latest  # Imagen oficial de MongoDB
+    ports:
+      - "27017:27017"  # Expone el puerto 27017 del contenedor al puerto 27017 del host
+    networks:
+      - jlam
+    volumes:
+      - data-mongo:/data/db  # Persistencia de los datos de MongoDB
+    restart: always
+
+volumes:
+  data-mongo:
+    name: data-mongo
+
+networks:
+  jlam:
+    driver: bridge

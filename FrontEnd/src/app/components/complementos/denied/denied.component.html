@@ -1,0 +1,13 @@
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div class="error-container" *ngIf="!loader">
+    <div class="error-content">
+        <h1>404</h1>
+        <h2>Oh no!</h2>
+        <p>Lo sentimos, parece que no tienes permisos para acceder a esta sección:(.</p>
+    </div>
+</div>
